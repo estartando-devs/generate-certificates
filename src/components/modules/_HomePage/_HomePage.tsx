@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Student } from '../../models';
-import * as S from './_HomePageStylde';
+import { Student } from '../../../models';
+import * as S from '../../../styles/pages/HomePageStyled';
 
 interface HomeProps {
   students: Array<Student>

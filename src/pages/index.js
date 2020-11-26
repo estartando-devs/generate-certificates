@@ -1,5 +1,5 @@
 import { dataFetch } from '../_mock/dataFetch';
-import HomePage from './_HomePage/_HomePage';
+import HomePage from '../components/modules/_HomePage/_HomePage';
 
 const Home = (props) => HomePage(props);
 

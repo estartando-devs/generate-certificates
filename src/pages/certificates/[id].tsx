@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { dataFetch } from '../../_mock/dataFetch';
 import { Student } from '../../models';
-import * as S from './certificateStyled';
+import * as S from '../../styles/pages/CertificateStyled';
 
 interface StudentProps {
   student: Student
