@@ -2,10 +2,11 @@ import React from 'react';
 import Typographies from './TypographyStyled';
 
 interface ITypography {
-  children?: string;
-  variant: 'h1' | 'h2' | 'body1';
+  children?: React.ReactNode;
+  variant: 'h1' | 'h2' | 'h3' | 'body1';
   color?: string;
   weight?: string;
+  fontSize?: string;
 }
 
 const TypographyDefaultProps: ITypography = {
@@ -17,6 +18,7 @@ const Typography = ({
   variant,
   color,
   weight,
+  fontSize,
   ...otherStyles
 }: ITypography) => {
   const Element = Typographies[variant];

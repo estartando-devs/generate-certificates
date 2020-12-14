@@ -84,6 +84,13 @@ const Theme: DefaultTheme = {
       lineHeight: 1.167,
       letterSpacing: '-0.01562em',
     },
+    h3: {
+      fontFamily: 'Ubuntu',
+      fontWeight: 300,
+      fontSize: '1.5625rem',
+      lineHeight: 1.167,
+      letterSpacing: '-0.01562em',
+    },
     body1: {
       fontFamily: 'Open Sans',
       fontWeight: 300,
