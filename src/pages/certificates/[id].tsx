@@ -12,6 +12,7 @@ interface StudentProps {
 
 const Certificate: React.FC<StudentProps> = ({ student }) => {
   const isDev = student.data.course === 'Desenvolvimento Web';
+  const color = isDev ? '#00bfa6' : '#6C63FF';
 
   return (
     <S.CertificateWrapper>
@@ -22,11 +23,11 @@ const Certificate: React.FC<StudentProps> = ({ student }) => {
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <S.CertificateContent color={isDev ? '#00bfa6' : '#6C63FF'}>
+      <S.CertificateContent color={color}>
         <S.Logo src={logo} alt="" />
         <S.TextContent>
           <S.Text>Certificamos que</S.Text>
-          <S.HighlightedText color={isDev ? '#00bfa6' : '#6C63FF'}>
+          <S.HighlightedText color={color}>
             {student.data.fullName}
           </S.HighlightedText>
           <S.Text>concluiu com êxito o curso de</S.Text>
