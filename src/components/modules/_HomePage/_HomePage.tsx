@@ -5,58 +5,65 @@ import { Student } from '../../../models';
 import * as S from '../../../styles/pages/HomePageStyled';
 
 interface HomeProps {
-  students: Array<Student>
+  students: Array<Student>;
 }
 
-const Home: React.FC<HomeProps> = ({ students }) => (
-  <S.HomeWrapper className="container">
-    <Head>
-      <title>Estartando Devs | Lista Alunos</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+const sortAlphabetically = (a: string, b: string) => {
+  if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  }
+  return 0;
+};
 
-    <S.PageTitle variant="h1">
-      Season 2020
-    </S.PageTitle>
+const Home: React.FC<HomeProps> = ({ students }) => {
+  const studentsOrdened = students.sort((a, b) =>
+    sortAlphabetically(a.data.fullName, b.data.fullName)
+  );
 
-    <S.BoxAreas>
-      <S.DesingBox>
-        <S.BoxTitle variant="h2">
-          Design UI/UX
-        </S.BoxTitle>
-        <S.ListArea>
-          {students.map((student) => student.data.course.includes('Design') && (
-          <Link
-            key={student.id}
-            href={`/certificates/${student.id}`}
-          >
-            <S.LinkName>
-              {student.data.fullName}
-            </S.LinkName>
-          </Link>
-          ))}
-        </S.ListArea>
-      </S.DesingBox>
+  const devStudents = studentsOrdened.filter(
+    (student) => student.data.course === 'Desenvolvimento Web'
+  );
+  const designStudents = studentsOrdened.filter(
+    (student) => student.data.course === 'Design UI/UX'
+  );
 
-      <S.DevelopmentBox>
-        <S.BoxTitle variant="h2">
-          Desenvolvimento Web
-        </S.BoxTitle>
-        <S.ListArea>
-          {students.map((student) => student.data.course.includes('Desenvolviment') && (
-          <Link
-            key={student.id}
-            href={`/certificates/${student.id}`}
-          >
-            <S.LinkName>
-              {student.data.fullName}
-            </S.LinkName>
-          </Link>
-          ))}
-        </S.ListArea>
-      </S.DevelopmentBox>
-    </S.BoxAreas>
-  </S.HomeWrapper>
-);
+  return (
+    <S.HomeWrapper className="container">
+      <Head>
+        <title>Estartando Devs | Lista Alunos</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <S.PageTitle variant="h1">Season 2020</S.PageTitle>
+
+      <S.BoxAreas>
+        <S.ClassBox>
+          <S.BoxTitle variant="h2">Design UI/UX</S.BoxTitle>
+          <S.ListArea>
+            {designStudents.map((student) => (
+              <Link key={student.id} href={`/certificates/${student.id}`}>
+                <S.LinkName>{student.data.fullName}</S.LinkName>
+              </Link>
+            ))}
+          </S.ListArea>
+        </S.ClassBox>
+
+        <S.ClassBox>
+          <S.BoxTitle variant="h2">Desenvolvimento Web</S.BoxTitle>
+          <S.ListArea>
+            {devStudents.map((student) => (
+              <Link key={student.id} href={`/certificates/${student.id}`}>
+                <S.LinkName>{student.data.fullName}</S.LinkName>
+              </Link>
+            ))}
+          </S.ListArea>
+        </S.ClassBox>
+      </S.BoxAreas>
+    </S.HomeWrapper>
+  );
+};
 
 export default Home;

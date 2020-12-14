@@ -27,20 +27,29 @@ export const BoxAreas = styled.div`
 `;
 
 export const DesingBox = styled.div`
-  border: solid 2px ${((props) => props.theme.palette.primary.dark)};
-  padding: 1.75rem 1rem;
+  border: solid 2px ${(props) => props.theme.palette.primary.dark};
+  padding: 1.75rem 2rem;
   border-radius: 1rem;
   max-height: 90vh;
-  overflow: hidden;
+  overflow: hidden auto;
   width: 100%;
 `;
 
 export const DevelopmentBox = styled.div`
-  border: solid 2px ${((props) => props.theme.palette.primary.dark)};
-  padding: 1.75rem 1rem;
+  border: solid 2px ${(props) => props.theme.palette.primary.dark};
+  padding: 1.75rem 2rem;
   border-radius: 1rem;
   max-height: 90vh;
-  overflow: hidden;
+  overflow: hidden auto;
+  width: 100%;
+`;
+
+export const ClassBox = styled.div`
+  border: solid 2px ${(props) => props.theme.palette.primary.dark};
+  padding: 1.75rem 2rem;
+  border-radius: 1rem;
+  max-height: 90vh;
+  overflow: hidden auto;
   width: 100%;
 `;
 
@@ -50,15 +59,14 @@ export const BoxTitle = styled(Typography)`
 
 export const ListArea = styled.div`
   display: flex;
-  width: 100%;  
+  width: 100%;
   flex-direction: column;
-  height: 100%;
-  overflow: overlay;
 `;
 
 export const LinkName = styled.p`
   color: ${(props) => props.theme.palette.text.primary};
-  transition: color .05s ease-in;
+  transition: color 0.05s ease-in;
+  cursor: pointer;
   &:hover {
     color: ${(props) => props.theme.palette.primary.light};
   }
