@@ -28,6 +28,7 @@ export const CertificateWrapper = styled.div`
   color-adjust: exact !important;
   @media (max-width: 768px) {
     background-size: cover;
+    padding: 15px;
   }
 `;
 
@@ -55,6 +56,7 @@ export const CertificateContent = styled.div`
   box-shadow: 0px 0px 30px ${(props) => props.color};
   @media (max-width: 768px) {
     background-size: cover;
+    padding: 10px;
   }
 `;
 
