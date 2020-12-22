@@ -27,24 +27,6 @@ export const BoxAreas = styled.div`
   `}
 `;
 
-export const DesingBox = styled.div`
-  border: solid 2px ${(props) => props.theme.palette.primary.dark};
-  padding: 1.75rem 2rem;
-  border-radius: 1rem;
-  max-height: 90vh;
-  overflow: hidden auto;
-  width: 100%;
-`;
-
-export const DevelopmentBox = styled.div`
-  border: solid 2px ${(props) => props.theme.palette.primary.dark};
-  padding: 1.75rem 2rem;
-  border-radius: 1rem;
-  max-height: 90vh;
-  overflow: hidden auto;
-  width: 100%;
-`;
-
 export const ClassBox = styled.div`
   border: solid 2px ${(props) => props.theme.palette.primary.dark};
   padding: 1.75rem 2rem;

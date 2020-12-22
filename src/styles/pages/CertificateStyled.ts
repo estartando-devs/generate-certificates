@@ -6,10 +6,6 @@ import { Typography } from '../../components/elements';
 export const CertificateWrapper = styled.div`
   @page {
     size: A4 landscape;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
     margin: 0;
   }
   display: flex;
