@@ -29,10 +29,7 @@ export const CertificateWrapper = styled.div`
 `;
 
 export const Logo = styled.img`
-  height: 90px;
-  @media (max-width: 768px) {
-    height: 70px;
-  }
+  width: 220px;
 `;
 
 export const CertificateContent = styled.div`
@@ -52,7 +49,7 @@ export const CertificateContent = styled.div`
   box-shadow: 0px 0px 30px ${(props) => props.color};
   @media (max-width: 768px) {
     background-size: cover;
-    padding: 10px;
+    padding: 0px;
   }
 `;
 
@@ -72,19 +69,25 @@ export const Text = styled(Typography).attrs({
 })`
   margin: 2px 0;
   text-align: center;
-  line-height: 40px;
-  font-weight: ${(props) => props.weight || 300};
-  font-size: ${(props) => props.fontSize};
-  span {
-    color: #161616;
-    font-weight: bold;
-    text-shadow: 2px 0 0 #d3d3d3, -2px 0 0 #d3d3d3, 0 2px 0 #d3d3d3,
-      0 -2px 0 #d3d3d3, 1px 1px #d3d3d3, -1px -1px 0 #d3d3d3, 1px -1px 0 #d3d3d3,
-      -1px 1px 0 #d3d3d3;
-  }
   @media (max-width: 768px) {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
+  .title-course{
+    font-weight: ${(props) => props.weight || 300};
+    font-size: ${(props)=> props.fontSize};
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+    span {
+      line-height: 40px;
+      color: #161616;
+      font-weight: bold;
+      text-shadow: 2px 0 0 #d3d3d3, -2px 0 0 #d3d3d3, 0 2px 0 #d3d3d3,
+        0 -2px 0 #d3d3d3, 1px 1px #d3d3d3, -1px -1px 0 #d3d3d3, 1px -1px 0 #d3d3d3,
+        -1px 1px 0 #d3d3d3;
+    }
+  }
+  
 `;
 
 export const HighlightedText = styled(Typography).attrs({
@@ -101,7 +104,4 @@ export const DescriptionText = styled(Typography).attrs({
 })`
   text-align: center;
   color: #7b7a7a;
-  @media (max-width: 768px) {
-    font-size: 0.875rem;
-  }
 `;

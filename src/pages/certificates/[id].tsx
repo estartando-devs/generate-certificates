@@ -50,11 +50,12 @@ const Certificate: React.FC<StudentProps> = ({ student }) => {
           </S.HighlightedText>
           <S.Text>concluiu com êxito o curso de</S.Text>
           <S.Text weight="500" fontSize="1.93rem">
-            <div dangerouslySetInnerHTML={{ __html: title }}></div>
+            <div dangerouslySetInnerHTML={{ __html: title }} className="title-course"></div>
           </S.Text>
           <S.Text>
             {techs}
-            <br />
+          </S.Text>
+          <S.Text>
             com carga horária de 72 horas, com início em 18/08/2020 e término em
             19/12/2020.
           </S.Text>

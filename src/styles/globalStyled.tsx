@@ -9,13 +9,13 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: ${(props) => props.theme.palette.background.default};
-    color: ${(props) => props.theme.palette.text.primary};
-    font-family: ${(props) => props.theme.typography.body1?.fontFamily};
-    font-size: ${(props) => props.theme.typography.body1?.fontSize};
   }
 
   html {
     scroll-behavior: smooth;
+    color: ${(props) => props.theme.palette.text.primary};
+    font-family: ${(props) => props.theme.typography.body1?.fontFamily};
+    font-size: ${(props) => props.theme.typography.body1?.fontSize};
   }
 
   #root, html, body {

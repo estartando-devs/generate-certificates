@@ -88,7 +88,7 @@ const Theme: DefaultTheme = {
       fontFamily: 'Ubuntu',
       fontWeight: 300,
       fontSize: '1.5625rem',
-      lineHeight: 1.167,
+      lineHeight: 1.25,
       letterSpacing: '-0.01562em',
     },
     body1: {
