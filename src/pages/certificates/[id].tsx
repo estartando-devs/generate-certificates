@@ -10,9 +10,27 @@ interface StudentProps {
   student: Student;
 }
 
+const coursesInfos = {
+  dev: {
+    title: `Desenvolvimento <span>Front-End</span>`,
+    techs: '<HTML5, CSS3, JAVASCRIPT, GIT, SASS e REACT JS>',
+    color: '#00bfa6',
+  },
+  design: {
+    title: `Design <span>UX/UI</span>`,
+    techs: '<Design Thinking e Produtos Digitais>',
+    color: '#6C63FF',
+  },
+};
+
+type TCourseOptions = 'dev' | 'design';
+
 const Certificate: React.FC<StudentProps> = ({ student }) => {
-  const isDev = student.data.course === 'Desenvolvimento Web';
-  const color = isDev ? '#00bfa6' : '#6C63FF';
+  const courseOption: TCourseOptions =
+    student.data.course === 'Desenvolvimento Web' ? 'dev' : 'design';
+  const courseSelected = coursesInfos[courseOption];
+
+  const { color, techs, title } = courseSelected;
 
   return (
     <S.CertificateWrapper>
@@ -31,19 +49,11 @@ const Certificate: React.FC<StudentProps> = ({ student }) => {
             {student.data.fullName}
           </S.HighlightedText>
           <S.Text>concluiu com êxito o curso de</S.Text>
-          {isDev ? (
-            <S.Text weight="500" fontSize="1.93rem">
-              Desenvolvimento <span>Front-End</span>
-            </S.Text>
-          ) : (
-            <S.Text weight="500" fontSize="1.93rem">
-              Design <span>UX/UI</span>
-            </S.Text>
-          )}
+          <S.Text weight="500" fontSize="1.93rem">
+            <div dangerouslySetInnerHTML={{ __html: title }}></div>
+          </S.Text>
           <S.Text>
-            {isDev
-              ? '<HTML5, CSS3, JAVASCRIPT, GIT, SASS e REACT JS>'
-              : '<Design Thinking e Produtos Digitais>'}
+            {techs}
             <br />
             com carga horária de 72 horas, com início em 18/08/2020 e término em
             19/12/2020.
