@@ -11,6 +11,7 @@ export const HomeWrapper = styled.div`
 
 export const PageTitle = styled(Typography)`
   margin: ${(props) => props.theme.margin?.small} 0;
+  text-align: center;
 `;
 
 export const BoxAreas = styled.div`
