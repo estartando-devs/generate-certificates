@@ -37,7 +37,9 @@ const Home: React.FC<HomeProps> = ({ students }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <S.PageTitle variant="h1">Season 2020</S.PageTitle>
+      <S.PageTitle variant="h1">
+        Certificados Estartando Devs - Edição 2020
+      </S.PageTitle>
 
       <S.BoxAreas>
         <S.ClassBox>
