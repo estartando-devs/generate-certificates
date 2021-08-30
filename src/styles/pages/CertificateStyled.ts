@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import bg1 from '../../assets/bg1.png';
-import bg2 from '../../assets/bg2.png';
 import { Typography } from '../../components/elements';
 
 export const CertificateWrapper = styled.div`
@@ -15,7 +13,7 @@ export const CertificateWrapper = styled.div`
   width: 100%;
   height: 100%;
   background: #161616;
-  background-image: url(${bg1});
+  background-image: url("/png/bg1.png");
   background-repeat: no-repeat, repeat;
   background-size: 70% 100%;
   font-family: Ubuntu;
@@ -41,7 +39,7 @@ export const CertificateContent = styled.div`
   height: 100%;
   padding: 35px;
   background: #161616;
-  background-image: url(${bg2});
+  background-image: url("/png/bg2.png");
   background-repeat: no-repeat, repeat;
   background-size: 100% 100%;
   border: 2px ${(props) => props.color};

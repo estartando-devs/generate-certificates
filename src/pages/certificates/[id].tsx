@@ -4,7 +4,6 @@ import Head from 'next/head';
 import { dataFetch } from '../../_mock/dataFetch';
 import { Student } from '../../models';
 import * as S from '../../styles/pages/CertificateStyled';
-import logo from '../../assets/logo.png';
 
 interface StudentProps {
   student: Student;
@@ -42,7 +41,7 @@ const Certificate: React.FC<StudentProps> = ({ student }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <S.CertificateContent color={color}>
-        <S.Logo src={logo} alt="" />
+        <S.Logo src="/svg/logo-fundo-transparente.svg" alt="logo Estartando Devs" />
         <S.TextContent>
           <S.Text>Certificamos que</S.Text>
           <S.HighlightedText color={color}>
