@@ -55,12 +55,12 @@ const Certificate: React.FC<StudentProps> = ({ student }) => {
             {techs}
           </S.Text>
           <S.Text>
-            com carga horária de 72 horas, com início em 18/08/2020 e término em
-            19/12/2020.
+            com carga horária de 72 horas, com início em 23/03/2021 e término em
+            28/08/2021.
           </S.Text>
         </S.TextContent>
         <S.DescriptionText>
-          Rio de Janeiro, 19 de Dezembro de 2020.
+          Rio de Janeiro, 30 de Agosto de 2021.
         </S.DescriptionText>
       </S.CertificateContent>
     </S.CertificateWrapper>

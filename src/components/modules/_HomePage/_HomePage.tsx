@@ -38,7 +38,7 @@ const Home: React.FC<HomeProps> = ({ students }) => {
       </Head>
 
       <S.PageTitle variant="h1">
-        Certificados Estartando Devs - Edição 2020
+        Certificados Estartando Devs - Edição 2021
       </S.PageTitle>
 
       <S.BoxAreas>
