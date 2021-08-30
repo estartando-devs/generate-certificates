@@ -1,4 +1,4 @@
-import students from './students-2021.json';
+import students from './students2021.json';
 
 export const dataFetch = () => Promise.resolve({
   status: 200,
