@@ -45,8 +45,7 @@ const Certificate = ({ student }: StudentProps) => {
     <S.CertificateWrapper>
       <Head>
         <title>
-          Estartando Devs | Certificado
-          {student.data.fullName}
+        {student?.data?.fullName?.toLocaleUpperCase()} | Estartando Devs
         </title>
       </Head>
       <S.CertificateContent color={color}>

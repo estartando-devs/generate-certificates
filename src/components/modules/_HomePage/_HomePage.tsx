@@ -37,11 +37,11 @@ export const Home = ({ students }: HomeProps) => {
   return (
     <S.HomeWrapper className="container">
       <Head>
-        <title>Estartando Devs | Lista Alunos</title>
+        <title>Certificados | Estartando Devs </title>
       </Head>
 
       <S.PageTitle variant="h1">
-        Certificados Estartando Devs - Edição 2021
+        Certificados Estartando Devs - Edição 2022
       </S.PageTitle>
 
       <S.BoxAreas>
