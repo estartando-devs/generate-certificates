@@ -1,7 +1,7 @@
 interface DataStudent {
   city: string
   neighborhood: string
-  course: string
+  course: Course
   zipcode: string
   address: string
   dateBirth: string
@@ -14,7 +14,7 @@ interface DataStudent {
   email: string
 }
 
-export interface Student {
+interface Student {
   id: string
   data: DataStudent
 }
