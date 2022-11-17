@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Student } from '../../../models';
 import * as S from '../../../styles/pages/HomePageStyled';
 
 interface HomeProps {
@@ -18,14 +17,19 @@ const sortAlphabetically = (a: string, b: string) => {
   return 0;
 };
 
-const Home: React.FC<HomeProps> = ({ students }) => {
+export const Home = ({ students }: HomeProps) => {
   const studentsOrdened = students.sort((a, b) =>
     sortAlphabetically(a.data.fullName, b.data.fullName)
   );
 
-  const devStudents = studentsOrdened.filter(
+  const frontendStudents = studentsOrdened.filter(
     (student) => student.data.course === 'Desenvolvimento Web'
   );
+
+  const backendStudents = studentsOrdened.filter(
+    (student) => student.data.course === 'Desenvolvimento Web'
+  );
+
   const designStudents = studentsOrdened.filter(
     (student) => student.data.course === 'Design UI/UX'
   );
@@ -34,7 +38,6 @@ const Home: React.FC<HomeProps> = ({ students }) => {
     <S.HomeWrapper className="container">
       <Head>
         <title>Estartando Devs | Lista Alunos</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <S.PageTitle variant="h1">
@@ -56,7 +59,18 @@ const Home: React.FC<HomeProps> = ({ students }) => {
         <S.ClassBox>
           <S.BoxTitle variant="h2">Desenvolvimento Web</S.BoxTitle>
           <S.ListArea>
-            {devStudents.map((student) => (
+            {frontendStudents.map((student) => (
+              <Link key={student.id} href={`/certificates/${student.id}`}>
+                <S.LinkName>{student.data.fullName}</S.LinkName>
+              </Link>
+            ))}
+          </S.ListArea>
+        </S.ClassBox>
+        
+        <S.ClassBox>
+          <S.BoxTitle variant="h2">Desenvolvimento Backend</S.BoxTitle>
+          <S.ListArea>
+            {backendStudents.map((student) => (
               <Link key={student.id} href={`/certificates/${student.id}`}>
                 <S.LinkName>{student.data.fullName}</S.LinkName>
               </Link>
@@ -68,4 +82,3 @@ const Home: React.FC<HomeProps> = ({ students }) => {
   );
 };
 
-export default Home;

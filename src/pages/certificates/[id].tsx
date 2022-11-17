@@ -1,33 +1,43 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import { dataFetch } from '../../_mock/dataFetch';
-import { Student } from '../../models';
 import * as S from '../../styles/pages/CertificateStyled';
+import { api } from '../../services/api';
 
 interface StudentProps {
   student: Student;
 }
 
 const coursesInfos = {
-  dev: {
+  frontend: {
     title: `Desenvolvimento <span>Front-End</span>`,
     techs: '<HTML5, CSS3, JAVASCRIPT, GIT, SASS e REACT JS>',
-    color: '#00bfa6',
+    color: '#0d6f61',
   },
   design: {
     title: `Design <span>UX/UI</span>`,
     techs: '<Design Thinking e Produtos Digitais>',
-    color: '#6C63FF',
+    color: '#45408e',
+  },
+  backend: {
+    title: `Design <span>UX/UI</span>`,
+    techs: '<Design Thinking e Produtos Digitais>',
+    color: '#1e6f7a',
   },
 };
 
-type TCourseOptions = 'dev' | 'design';
+type TCourseOptions = 'frontend' | 'design' | 'backend';
 
-const Certificate: React.FC<StudentProps> = ({ student }) => {
-  const courseOption: TCourseOptions =
-    student.data.course === 'Desenvolvimento Web' ? 'dev' : 'design';
-  const courseSelected = coursesInfos[courseOption];
+const keyByCourse: Record<Course, CourseKeys> = {
+  'Desenvolvimento Web': 'frontend',
+  'Desenvolvimento Backend': 'backend',
+  'Design UI/UX': 'design'
+}
+
+const Certificate = ({ student }: StudentProps) => {
+  const courseOption: TCourseOptions = keyByCourse?.[student.data.course];
+
+  const courseSelected = coursesInfos?.[courseOption] ?? {};
 
   const { color, techs, title } = courseSelected;
 
@@ -38,7 +48,6 @@ const Certificate: React.FC<StudentProps> = ({ student }) => {
           Estartando Devs | Certificado
           {student.data.fullName}
         </title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <S.CertificateContent color={color}>
         <S.Logo src="/svg/logo-fundo-transparente.svg" alt="logo Estartando Devs" />
@@ -55,12 +64,12 @@ const Certificate: React.FC<StudentProps> = ({ student }) => {
             {techs}
           </S.Text>
           <S.Text>
-            com carga horária de 90 horas, com início em 23/03/2021 e término em
-            28/08/2021.
+            com carga horária de 90 horas, com início em 12/04/2022 e término em
+            12/11/2022.
           </S.Text>
         </S.TextContent>
         <S.DescriptionText>
-          Rio de Janeiro, 30 de Agosto de 2021.
+          Rio de Janeiro, 12 de Novembro de 2022.
         </S.DescriptionText>
       </S.CertificateContent>
     </S.CertificateWrapper>
@@ -68,8 +77,7 @@ const Certificate: React.FC<StudentProps> = ({ student }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await dataFetch();
-  const students = res.data;
+  const students = await api<Array<Student>>('/subscribe?graduated=true&fields=fullName,email,course');
 
   const paths = students.map((student) => ({
     params: {
@@ -81,8 +89,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await dataFetch();
-  const students = res.data;
+  const students = await api<Array<Student>>('/subscribe?graduated=true&fields=fullName,email,course');
 
   const student = students.find((data) => data.id === params?.id);
 
