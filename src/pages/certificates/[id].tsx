@@ -5,6 +5,7 @@ import * as S from '../../styles/pages/CertificateStyled';
 import { api } from '../../services/api';
 import { useDownloadContainerAsImage } from '../../hooks/useDownloadContainerAsImage';
 import { Button } from '../../components/elements';
+import { NextSeo } from 'next-seo';
 
 interface StudentProps {
   student: Student;
@@ -57,12 +58,11 @@ const Certificate = ({ student }: StudentProps) => {
 
   return (
     <>
+      <NextSeo
+        title={`${student?.data?.fullName?.toLocaleUpperCase()}`}
+        description="Agora você pode compartilhar seu certificado. Não esqueça de nos marcar."
+      />
       <S.CertificateWrapper >
-        <Head>
-          <title>
-            {student?.data?.fullName?.toLocaleUpperCase()} | Estartando Devs
-          </title>
-        </Head>
         <S.CertificateContent color={color} ref={containerRef}>
           <S.Logo
             src="/svg/logo-fundo-transparente.svg"

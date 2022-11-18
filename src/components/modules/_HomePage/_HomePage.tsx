@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import * as S from '../../../styles/pages/HomePageStyled';
 
@@ -36,10 +35,6 @@ export const Home = ({ students }: HomeProps) => {
 
   return (
     <S.HomeWrapper className="container">
-      <Head>
-        <title>Certificados | Estartando Devs </title>
-      </Head>
-
       <S.PageTitle variant="h1">
         Certificados Estartando Devs - Edição 2022
       </S.PageTitle>
