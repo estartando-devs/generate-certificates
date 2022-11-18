@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     color: ${(props) => props.theme.palette.text.primary};
     font-family: ${(props) => props.theme.typography.body1?.fontFamily};
-    font-size: ${(props) => props.theme.typography.body1?.fontSize};
+    font-size: 16px;
   }
 
   #root, html, body {

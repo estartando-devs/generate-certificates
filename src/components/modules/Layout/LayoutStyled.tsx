@@ -5,6 +5,9 @@ const LayoutContainer = styled.div`
   height: 100vh;
   background-color: ${(props) => props.theme.palette.background.default};
   padding: 1.5rem;
+  @media (max-width: 768px) { 
+    padding: 0;
+  }
 `;
 
 const LayoutContent = styled.div`
