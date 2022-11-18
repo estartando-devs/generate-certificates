@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Typography } from '../../components/elements';
 
 export const CertificateWrapper = styled.div`
@@ -10,8 +10,8 @@ export const CertificateWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: #161616;
   background-image: url("/png/bg1.png");
   background-repeat: no-repeat, repeat;
@@ -103,3 +103,62 @@ export const DescriptionText = styled(Typography).attrs({
   text-align: center;
   color: #7b7a7a;
 `;
+
+const animation = keyframes`
+  0%   {
+    left:0px; 
+    top:0px;
+    opacity: 1;
+  }
+  10% {
+    opacity: .8;
+  }
+  20% {
+    opacity: .6;
+  } 
+  30% {
+    opacity: .4;
+  } 
+  40% {
+    opacity: .3;
+  }  
+  50%  {
+    left:0px;
+    top:30px;
+    opacity: .2;
+  }
+  60% {
+    opacity: .3;
+  }
+  75% {
+    opacity: .4;
+  }
+  80% {
+    opacity: .6;
+  }
+  90% {
+    opacity: .8;
+  }
+  100% {
+    left:0px; 
+    top:0px; 
+    opacity: 1;
+  }
+`
+
+export const Loading = styled.div<{active?: boolean}>`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #161616;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    position: relative;
+    animation-name: ${animation};
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+`

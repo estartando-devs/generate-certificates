@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import * as S from '../../styles/pages/CertificateStyled';
 import { api } from '../../services/api';
+import { useDownloadContainerAsImage } from '../../hooks/useDownloadContainerAsImage';
+import { Button } from '../../components/elements';
 
 interface StudentProps {
   student: Student;
@@ -31,8 +33,8 @@ type TCourseOptions = 'frontend' | 'design' | 'backend';
 const keyByCourse: Record<Course, CourseKeys> = {
   'Desenvolvimento Web': 'frontend',
   'Desenvolvimento Backend': 'backend',
-  'Design UI/UX': 'design'
-}
+  'Design UI/UX': 'design',
+};
 
 const Certificate = ({ student }: StudentProps) => {
   const courseOption: TCourseOptions = keyByCourse?.[student.data.course];
@@ -41,42 +43,73 @@ const Certificate = ({ student }: StudentProps) => {
 
   const { color, techs, title } = courseSelected;
 
+  const {
+    containerRef,
+    handleDownloadImage,
+    loading
+  } = useDownloadContainerAsImage();
+
+  useEffect(() => {
+    if(containerRef.current && !loading){
+      containerRef.current.style.boxShadow = `0px 0px 30px ${color}`;
+    }
+  }, [loading])
+
   return (
-    <S.CertificateWrapper>
-      <Head>
-        <title>
-        {student?.data?.fullName?.toLocaleUpperCase()} | Estartando Devs
-        </title>
-      </Head>
-      <S.CertificateContent color={color}>
-        <S.Logo src="/svg/logo-fundo-transparente.svg" alt="logo Estartando Devs" />
-        <S.TextContent>
-          <S.Text>Certificamos que</S.Text>
-          <S.HighlightedText color={color}>
-            {student.data.fullName}
-          </S.HighlightedText>
-          <S.Text>concluiu com êxito o curso de</S.Text>
-          <S.Text weight="500" fontSize="1.93rem">
-            <div dangerouslySetInnerHTML={{ __html: title }} className="title-course"></div>
-          </S.Text>
-          <S.Text>
-            {techs}
-          </S.Text>
-          <S.Text>
-            com carga horária de 90 horas, com início em 12/04/2022 e término em
-            12/11/2022.
-          </S.Text>
-        </S.TextContent>
-        <S.DescriptionText>
-          Rio de Janeiro, 12 de Novembro de 2022.
-        </S.DescriptionText>
-      </S.CertificateContent>
-    </S.CertificateWrapper>
+    <>
+      <S.CertificateWrapper >
+        <Head>
+          <title>
+            {student?.data?.fullName?.toLocaleUpperCase()} | Estartando Devs
+          </title>
+        </Head>
+        <S.CertificateContent color={color} ref={containerRef}>
+          <S.Logo
+            src="/svg/logo-fundo-transparente.svg"
+            alt="logo Estartando Devs"
+          />
+          <S.TextContent>
+            <S.Text>Certificamos que</S.Text>
+            <S.HighlightedText color={color}>
+              {student.data.fullName}
+            </S.HighlightedText>
+            <S.Text>concluiu com êxito o curso de</S.Text>
+            <S.Text weight="500" fontSize="1.93rem">
+              <div
+                dangerouslySetInnerHTML={{ __html: title }}
+                className="title-course"
+              ></div>
+            </S.Text>
+            <S.Text>{techs}</S.Text>
+            <S.Text>
+              com carga horária de 90 horas, com início em 12/04/2022 e término
+              em 12/11/2022.
+            </S.Text>
+          </S.TextContent>
+          <S.DescriptionText>
+            Rio de Janeiro, 12 de Novembro de 2022.
+          </S.DescriptionText>
+        </S.CertificateContent>
+      </S.CertificateWrapper>
+      {loading && (
+        <S.Loading>
+          <div>
+            <S.Logo
+              src="/svg/logo-fundo-transparente.svg"
+              alt="logo Estartando Devs"
+            />
+          </div>
+        </S.Loading>
+      )}
+      <Button onClick={handleDownloadImage}>Exportar</Button>
+    </>
   );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const students = await api<Array<Student>>('/subscribe?graduated=true&fields=fullName,email,course');
+  const students = await api<Array<Student>>(
+    '/subscribe?graduated=true&fields=fullName,email,course'
+  );
 
   const paths = students.map((student) => ({
     params: {
@@ -88,7 +121,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const students = await api<Array<Student>>('/subscribe?graduated=true&fields=fullName,email,course');
+  const students = await api<Array<Student>>(
+    '/subscribe?graduated=true&fields=fullName,email,course'
+  );
 
   const student = students.find((data) => data.id === params?.id);
 
