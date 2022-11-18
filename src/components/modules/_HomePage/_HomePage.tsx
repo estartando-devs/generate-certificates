@@ -26,7 +26,7 @@ export const Home = ({ students }: HomeProps) => {
   );
 
   const backendStudents = studentsOrdened.filter(
-    (student) => student.data.course === 'Desenvolvimento Web'
+    (student) => student.data.course === 'Desenvolvimento Backend'
   );
 
   const designStudents = studentsOrdened.filter(
