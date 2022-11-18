@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Head from 'next/head';
 import * as S from '../../styles/pages/CertificateStyled';
 import { api } from '../../services/api';
 import { useDownloadContainerAsImage } from '../../hooks/useDownloadContainerAsImage';
