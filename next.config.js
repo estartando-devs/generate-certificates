@@ -1,3 +1,10 @@
 module.exports = {
-  esModule: true,
+  async rewrites() {
+    return [
+      {
+        source: `/certificados/:id*`,
+        destination: '/certificates/:id*',
+      },
+    ]
+  } 
 };

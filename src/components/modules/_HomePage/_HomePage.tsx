@@ -44,7 +44,7 @@ export const Home = ({ students }: HomeProps) => {
           <S.BoxTitle variant="h2">Design UI/UX</S.BoxTitle>
           <S.ListArea>
             {designStudents.map((student) => (
-              <Link key={student.id} href={`/certificates/${student.id}`}>
+              <Link key={student.id} href={`/certificados/${student.id}`}>
                 <S.LinkName>{student.data.fullName}</S.LinkName>
               </Link>
             ))}
@@ -55,7 +55,7 @@ export const Home = ({ students }: HomeProps) => {
           <S.BoxTitle variant="h2">Desenvolvimento Web</S.BoxTitle>
           <S.ListArea>
             {frontendStudents.map((student) => (
-              <Link key={student.id} href={`/certificates/${student.id}`}>
+              <Link key={student.id} href={`/certificados/${student.id}`}>
                 <S.LinkName>{student.data.fullName}</S.LinkName>
               </Link>
             ))}
@@ -66,7 +66,7 @@ export const Home = ({ students }: HomeProps) => {
           <S.BoxTitle variant="h2">Desenvolvimento Backend</S.BoxTitle>
           <S.ListArea>
             {backendStudents.map((student) => (
-              <Link key={student.id} href={`/certificates/${student.id}`}>
+              <Link key={student.id} href={`/certificados/${student.id}`}>
                 <S.LinkName>{student.data.fullName}</S.LinkName>
               </Link>
             ))}
