@@ -13,17 +13,17 @@ interface StudentProps {
 const coursesInfos = {
   frontend: {
     title: `Desenvolvimento <span>Front-End</span>`,
-    techs: '<HTML5, CSS3, JAVASCRIPT, GIT, SASS e REACT JS>',
+    techs: '<HTML5, CSS3, JAVASCRIPT, GIT, SASS, Scrum e REACT JS>',
     color: '#0d6f61',
   },
   design: {
     title: `Design <span>UX/UI</span>`,
-    techs: '<Design Thinking e Produtos Digitais>',
+    techs: '<Design Thinking, Produtos Digitais e Scrum>',
     color: '#45408e',
   },
   backend: {
-    title: `Design <span>UX/UI</span>`,
-    techs: '<Design Thinking e Produtos Digitais>',
+    title: `Desenvolvimento <span>Backend</span>`,
+    techs: '<HTML5, CSS3, JAVASCRIPT, GIT, NodeJS, SQL e NoSQL, Banco de Dados, API REST, GraphQL, Solid e Scrum >',
     color: '#1e6f7a',
   },
 };
