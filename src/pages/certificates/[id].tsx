@@ -13,17 +13,17 @@ interface StudentProps {
 const coursesInfos = {
   frontend: {
     title: `Desenvolvimento <span>Front-End</span>`,
-    techs: '<HTML5, CSS3, JAVASCRIPT, GIT, SASS, Scrum e REACT JS>',
+    techs: '<HTML5, CSS3, JAVASCRIPT, GIT, Styled Components, Scrum, REACT JS & Treinamento de Soft Skills>',
     color: '#0d6f61',
   },
   design: {
     title: `Design <span>UX/UI</span>`,
-    techs: '<Design Thinking, Produtos Digitais e Scrum>',
+    techs: '<Design Thinking, Produtos Digitais, Scrum & Treinamento de Soft Skills>',
     color: '#45408e',
   },
   backend: {
     title: `Desenvolvimento <span>Backend</span>`,
-    techs: '<HTML5, CSS3, JAVASCRIPT, GIT, NodeJS, SQL e NoSQL, Banco de Dados, API REST, GraphQL, Solid e Scrum >',
+    techs: '<JAVASCRIPT, GIT, NodeJS, SQL e NoSQL, Banco de Dados, API REST, Docker, Testes unitários, Solid, Scrum & Treinamento de Soft Skills>',
     color: '#1e6f7a',
   },
 };
@@ -81,7 +81,7 @@ const Certificate = ({ student }: StudentProps) => {
             </S.Text>
             <S.Text>{techs}</S.Text>
             <S.Text>
-              com carga horária de 90 horas, com início em 12/04/2022 e término
+              com carga horária de 120 horas, com início em 12/04/2022 e término
               em 12/11/2022.
             </S.Text>
           </S.TextContent>
@@ -126,7 +126,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const student = students.find((data) => data.id === params?.id);
 
-  return { props: { student }, revalidate: 60 };
+  return { props: { student }};
 };
 
 export default Certificate;
