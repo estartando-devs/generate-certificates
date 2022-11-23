@@ -126,7 +126,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const student = students.find((data) => data.id === params?.id);
 
-  return { props: { student }};
+  return { props: { student }, revalidate: 60 };
 };
 
 export default Certificate;
