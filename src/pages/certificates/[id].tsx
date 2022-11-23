@@ -106,7 +106,17 @@ const Certificate = ({ student }: StudentProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: [], fallback: 'blocking' };
+  const students = await api<Array<Student>>(
+    '/subscribe?graduated=true&fields=fullName,email,course'
+  );
+
+  const paths = students.map((student) => ({
+    params: {
+      id: student.id,
+    },
+  }));
+
+  return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -116,7 +126,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const student = students.find((data) => data.id === params?.id);
 
-  return { props: { student } };
+  return { props: { student }, revalidate: 60 };
 };
 
 export default Certificate;
