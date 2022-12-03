@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import * as S from '../../../styles/pages/HomePageStyled';
+import capitalize from '../../../utils/capitalize';
 
 interface HomeProps {
   students: Array<Student>;
@@ -45,7 +46,7 @@ export const Home = ({ students }: HomeProps) => {
           <S.ListArea>
             {designStudents.map((student) => (
               <Link key={student.id} href={`/certificados/${student.id}`}>
-                <S.LinkName>{student.data.fullName}</S.LinkName>
+                <S.LinkName>{capitalize(student.data.fullName)}</S.LinkName>
               </Link>
             ))}
           </S.ListArea>
@@ -56,7 +57,7 @@ export const Home = ({ students }: HomeProps) => {
           <S.ListArea>
             {frontendStudents.map((student) => (
               <Link key={student.id} href={`/certificados/${student.id}`}>
-                <S.LinkName>{student.data.fullName}</S.LinkName>
+                <S.LinkName>{capitalize(student.data.fullName)}</S.LinkName>
               </Link>
             ))}
           </S.ListArea>
@@ -67,7 +68,7 @@ export const Home = ({ students }: HomeProps) => {
           <S.ListArea>
             {backendStudents.map((student) => (
               <Link key={student.id} href={`/certificados/${student.id}`}>
-                <S.LinkName>{student.data.fullName}</S.LinkName>
+                <S.LinkName>{capitalize(student.data.fullName)}</S.LinkName>
               </Link>
             ))}
           </S.ListArea>

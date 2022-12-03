@@ -5,6 +5,7 @@ import { api } from '../../services/api';
 import { useDownloadContainerAsImage } from '../../hooks/useDownloadContainerAsImage';
 import { Button } from '../../components/elements';
 import { NextSeo } from 'next-seo';
+import capitalize from '../../utils/capitalize';
 
 interface StudentProps {
   student: Student;
@@ -70,7 +71,7 @@ const Certificate = ({ student }: StudentProps) => {
           <S.TextContent>
             <S.Text>Certificamos que</S.Text>
             <S.HighlightedText color={color}>
-              {student.data.fullName}
+              {capitalize(student.data.fullName)}
             </S.HighlightedText>
             <S.Text>concluiu com êxito o curso de</S.Text>
             <S.Text weight="500" fontSize="1.93rem">
