@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import * as S from '../../styles/pages/CertificateStyled';
-import { api } from '../../services/api';
 import { useDownloadContainerAsImage } from '../../hooks/useDownloadContainerAsImage';
 import { Button } from '../../components/elements';
 import { NextSeo } from 'next-seo';
 import capitalize from '../../utils/capitalize';
+import { students } from '_mock/students2022';
 
 interface StudentProps {
   student: Student;
@@ -14,17 +14,20 @@ interface StudentProps {
 const coursesInfos = {
   frontend: {
     title: `Desenvolvimento <span>Front-End</span>`,
-    techs: '<HTML5, CSS3, JAVASCRIPT, GIT, Styled Components, Scrum, REACT JS & Treinamento de Soft Skills>',
+    techs:
+      '<HTML5, CSS3, JAVASCRIPT, GIT, SCSS, Scrum, Angular & Treinamento de Soft Skills>',
     color: '#0d6f61',
   },
   design: {
     title: `Design <span>UX/UI</span>`,
-    techs: '<Design Thinking, Produtos Digitais, Scrum & Treinamento de Soft Skills>',
+    techs:
+      '<Design Thinking, Produtos Digitais, Scrum & Treinamento de Soft Skills>',
     color: '#45408e',
   },
   backend: {
     title: `Desenvolvimento <span>Backend</span>`,
-    techs: '<JAVASCRIPT, GIT, NodeJS, SQL e NoSQL, Banco de Dados, API REST, Docker, Testes unitários, Solid, Scrum & Treinamento de Soft Skills>',
+    techs:
+      '<C#, .NET, Clean Architecture, GIT, SQL e NoSQL, Banco de Dados, API REST, Docker, Testes unitários, Solid, Scrum & Treinamento de Soft Skills>',
     color: '#1e6f7a',
   },
 };
@@ -47,14 +50,14 @@ const Certificate = ({ student }: StudentProps) => {
   const {
     containerRef,
     handleDownloadImage,
-    loading
+    loading,
   } = useDownloadContainerAsImage();
 
   useEffect(() => {
-    if(containerRef.current && !loading){
+    if (containerRef.current && !loading) {
       containerRef.current.style.boxShadow = `0px 0px 30px ${color}`;
     }
-  }, [loading])
+  }, [loading]);
 
   return (
     <>
@@ -62,7 +65,7 @@ const Certificate = ({ student }: StudentProps) => {
         title={`${student?.data?.fullName?.toLocaleUpperCase()}`}
         description="Agora você pode compartilhar seu certificado. Não esqueça de nos marcar."
       />
-      <S.CertificateWrapper >
+      <S.CertificateWrapper>
         <S.CertificateContent color={color} ref={containerRef}>
           <S.Logo
             src="/svg/logo-fundo-transparente.svg"
@@ -83,11 +86,11 @@ const Certificate = ({ student }: StudentProps) => {
             <S.Text>{techs}</S.Text>
             <S.Text>
               com carga horária de 120 horas, com início em 12/04/2022 e término
-              em 12/11/2022.
+              em 18/06/2024.
             </S.Text>
           </S.TextContent>
           <S.DescriptionText>
-            Rio de Janeiro, 12 de Novembro de 2022.
+            Rio de Janeiro, 14 de Dezembro de 2024.
           </S.DescriptionText>
         </S.CertificateContent>
       </S.CertificateWrapper>
@@ -107,26 +110,16 @@ const Certificate = ({ student }: StudentProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const students = await api<Array<Student>>(
-    '/subscribe?graduated=true&fields=fullName,email,course'
-  );
-
   const paths = students.map((student) => ({
     params: {
       id: student.id,
     },
   }));
-
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const students = await api<Array<Student>>(
-    '/subscribe?graduated=true&fields=fullName,email,course'
-  );
-
-  const student = students.find((data) => data.id === params?.id);
-
+  const student = students.find((student) => student.id === params?.id);
   return { props: { student }, revalidate: 60 };
 };
 
