@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react';
-import { GetStaticPaths, GetStaticProps } from 'next';
 import * as S from '../../styles/pages/CertificateStyled';
 import { useDownloadContainerAsImage } from '../../hooks/useDownloadContainerAsImage';
 import { Button } from '../../components/elements';
 import { NextSeo } from 'next-seo';
 import capitalize from '../../utils/capitalize';
 import { students } from '_mock/students2022';
+import { useRouter } from 'next/router';
 
-interface StudentProps {
-  student: Student;
-}
 
 const coursesInfos = {
   frontend: {
@@ -40,25 +37,29 @@ const keyByCourse: Record<Course, CourseKeys> = {
   'Design UI/UX': 'design',
 };
 
-const Certificate = ({ student }: StudentProps) => {
-  const courseOption: TCourseOptions = keyByCourse?.[student.data.course];
-
-  const courseSelected = coursesInfos?.[courseOption] ?? {};
-
-  const { color, techs, title } = courseSelected;
+const Certificate = () => {
+  const router = useRouter()
+  const student = students.find((student) => student.id === router.query?.id);
 
   const {
     containerRef,
     handleDownloadImage,
     loading,
   } = useDownloadContainerAsImage();
-
+  
   useEffect(() => {
     if (containerRef.current && !loading) {
       containerRef.current.style.boxShadow = `0px 0px 30px ${color}`;
     }
   }, [loading]);
 
+  if (!student) return null
+   
+  const courseOption: TCourseOptions = keyByCourse?.[student.data.course];
+
+  const courseSelected = coursesInfos?.[courseOption] ?? {};
+
+  const { color, techs, title } = courseSelected;
   return (
     <>
       <NextSeo
@@ -109,18 +110,5 @@ const Certificate = ({ student }: StudentProps) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = students.map((student) => ({
-    params: {
-      id: student.id,
-    },
-  }));
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const student = students.find((student) => student.id === params?.id);
-  return { props: { student }, revalidate: 60 };
-};
 
 export default Certificate;
