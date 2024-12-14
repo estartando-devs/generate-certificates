@@ -149,7 +149,7 @@ export const students: Student[] = [
     id: '22',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Mayara de Almeida Sales Goncalves',
+      fullName: 'Mayara Gonçalves Santos',
     },
   },
   {
