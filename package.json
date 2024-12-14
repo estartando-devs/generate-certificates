@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/canvas-confetti": "^1.6.4",
+    "canvas-confetti": "^1.9.3",
     "html2canvas": "^1.4.1",
     "next": "12.2.5",
     "next-seo": "^5.14.1",
