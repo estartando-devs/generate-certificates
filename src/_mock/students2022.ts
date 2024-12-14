@@ -1,3 +1,4 @@
+// @ts-nocheck
 export const students: Student[] = [
   {
     id: '1',
@@ -184,6 +185,34 @@ export const students: Student[] = [
     data: {
       course: 'Design UI/UX',
       fullName: 'Rafaela dos Santos Silva do Nascimento',
+    },
+  },
+  {
+    id: '28',
+    data: {
+      course: 'Design UI/UX',
+      fullName: 'Karina  Eleúterio de Matos',
+    },
+  },
+  {
+    id: '29',
+    data: {
+      course: 'Design UI/UX',
+      fullName: 'Nicholas Dill',
+    },
+  },
+  {
+    id: '30',
+    data: {
+      course: 'Design UI/UX',
+      fullName: 'PRISCILA KARINA SANTOS DE SOUZA',
+    },
+  },
+  {
+    id: '31',
+    data: {
+      course: 'Design UI/UX',
+      fullName: 'Julia Lima',
     },
   },
 ];
