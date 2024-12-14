@@ -86,8 +86,8 @@ const Certificate = () => {
             </S.Text>
             <S.Text>{techs}</S.Text>
             <S.Text>
-              com carga horária de 120 horas, com início em 12/04/2022 e término
-              em 18/06/2024.
+              com carga horária de 120 horas, com início em 18/06/2024 e término
+              em 14/12/2024.
             </S.Text>
           </S.TextContent>
           <S.DescriptionText>
