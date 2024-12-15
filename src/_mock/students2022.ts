@@ -215,4 +215,32 @@ export const students: Student[] = [
       fullName: 'Julia Lima',
     },
   },
+  {
+    id: '32',
+    data: {
+      course: 'Desenvolvimento Web',
+      fullName: 'Kelly Yasmin Ferreira e Silva',
+    },
+  },
+  {
+    id: '33',
+    data: {
+      course: 'Desenvolvimento Web',
+      fullName: 'Lucas Alexandre Lima Santos Dias',
+    },
+  },
+  {
+    id: '34',
+    data: {
+      course: 'Desenvolvimento Backend',
+      fullName: 'Marco Antonio Ferreira Pinto',
+    },
+  },
+  {
+    id: '34',
+    data: {
+      course: 'Desenvolvimento Backend',
+      fullName: 'Paulo Yuri Fonseca Rosa',
+    },
+  },
 ];
