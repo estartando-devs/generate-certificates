@@ -243,4 +243,11 @@ export const students: Student[] = [
       fullName: 'Paulo Yuri Fonseca Rosa',
     },
   },
+  {
+    id: '35',
+    data: {
+      course: 'Desenvolvimento Web',
+      fullName: 'Pablo Mesquita Reis Terra',
+    },
+  },
 ];
