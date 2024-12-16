@@ -250,4 +250,11 @@ export const students: Student[] = [
       fullName: 'Pablo Mesquita Reis Terra',
     },
   },
+  {
+    id: '36',
+    data: {
+      course: 'Desenvolvimento Backend',
+      fullName: 'Erickssom Melgaço de Oliveira',
+    },
+  },
 ];
