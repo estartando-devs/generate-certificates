@@ -257,4 +257,11 @@ export const students: Student[] = [
       fullName: 'Erickssom Melgaço de Oliveira',
     },
   },
+  {
+    id: '36',
+    data: {
+      course: 'Desenvolvimento Web',
+      fullName: 'João Gabriel',
+    },
+  },
 ];
