@@ -102,6 +102,8 @@ const Certificate = () => {
       <NextSeo
         title={`${student?.data?.fullName?.toLocaleUpperCase()}`}
         description="Agora você pode compartilhar seu certificado. Não esqueça de nos marcar."
+        nofollow={true}
+        noindex={true}
       />
       <S.CertificateWrapper>
         <S.CertificateContent color={color} ref={containerRef}>
