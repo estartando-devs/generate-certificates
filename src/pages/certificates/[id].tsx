@@ -12,7 +12,7 @@ const coursesInfos = {
   frontend: {
     title: `Desenvolvimento <span>Front-End</span>`,
     techs:
-      '<HTML5, CSS3, JAVASCRIPT, GIT, SCSS, Scrum, Angular & Treinamento de Soft Skills>',
+      '<HTML5, CSS3, JAVASCRIPT, GIT, SCSS, Scrum, ReactJS, Redux & Treinamento de Soft Skills>',
     color: '#0d6f61',
   },
   design: {
@@ -24,7 +24,7 @@ const coursesInfos = {
   backend: {
     title: `Desenvolvimento <span>Backend</span>`,
     techs:
-      '<C#, .NET, Clean Architecture, GIT, SQL e NoSQL, Banco de Dados, API REST, Docker, Testes unitários, Solid, Scrum & Treinamento de Soft Skills>',
+      '<C#, .NET, Clean Architecture, GIT, SQL, Banco de Dados, API REST, Docker, Testes unitários, Solid, Scrum & Treinamento de Soft Skills>',
     color: '#1e6f7a',
   },
 };
@@ -125,12 +125,12 @@ const Certificate = () => {
             </S.Text>
             <S.Text>{techs}</S.Text>
             <S.Text>
-              com carga horária de 120 horas, com início em 18/06/2024 e término
-              em 14/12/2024.
+              com carga horária de 68 horas, com início em 05/08/2025 e término
+              em 29/11/2025.
             </S.Text>
           </S.TextContent>
           <S.DescriptionText>
-            Rio de Janeiro, 14 de Dezembro de 2024.
+            Rio de Janeiro, 29 de Novembro de 2025.
           </S.DescriptionText>
         </S.CertificateContent>
       </S.CertificateWrapper>

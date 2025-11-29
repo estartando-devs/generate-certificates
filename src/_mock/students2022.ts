@@ -4,264 +4,203 @@ export const students: Student[] = [
     id: '1',
     data: {
       course: 'Desenvolvimento Web',
-      fullName: 'Ryta de Kassia Albuquerque dos Prazeres',
+      fullName: 'Adriano Teixeira',
     },
   },
   {
     id: '2',
     data: {
       course: 'Desenvolvimento Web',
-      fullName: 'Luan Anderson Leite Silva',
+      fullName: 'Andre Luiz',
     },
   },
   {
     id: '3',
     data: {
       course: 'Desenvolvimento Web',
-      fullName: 'Gabriel Vilela Portela',
+      fullName: 'Bruno Fabbio',
     },
   },
   {
     id: '4',
     data: {
       course: 'Desenvolvimento Web',
-      fullName: 'Victor Gabriel Alves da Costa',
+      fullName: 'Thobias Wallace',
     },
   },
   {
     id: '5',
     data: {
       course: 'Desenvolvimento Web',
-      fullName: 'Bruno Henry Amorim Spanier',
+      fullName: 'Tiago Noronha',
     },
   },
   {
     id: '6',
     data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'Lorena Silva Martins de Oliveira',
+      course: 'Desenvolvimento Backend',
+      fullName: 'Cleiton Maciel',
     },
   },
   {
     id: '7',
     data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'Daniel Balbino Gomes',
+      course: 'Desenvolvimento Backend',
+      fullName: 'Eduardo Henrique',
     },
   },
   {
     id: '8',
     data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'Igor Monsores de Andrade',
+      course: 'Desenvolvimento Backend',
+      fullName: 'Fellipe Pereira',
     },
   },
   {
     id: '9',
     data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'Gabriel Porto Vasconcelos',
+      course: 'Desenvolvimento Backend',
+      fullName: 'Guilherme Monfardini',
     },
   },
   {
     id: '10',
     data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'Leila Yumi Kato de Santana',
+      course: 'Desenvolvimento Backend',
+      fullName: 'Hygor Augusto',
     },
   },
   {
     id: '11',
     data: {
       course: 'Desenvolvimento Backend',
-      fullName: 'Alan Santana Ferreira',
+      fullName: 'Jader Adriel',
     },
   },
   {
     id: '12',
     data: {
       course: 'Desenvolvimento Backend',
-      fullName: 'Isabele da Silva dos Santos Leal',
+      fullName: 'Jeovana Miranda',
     },
   },
   {
     id: '13',
     data: {
       course: 'Desenvolvimento Backend',
-      fullName: 'Adriano Teixeira Benevenuto Sampaio',
+      fullName: 'Jonas Silva',
     },
   },
   {
     id: '14',
     data: {
       course: 'Desenvolvimento Backend',
-      fullName: 'Emmanuel Ferrão Canto',
+      fullName: 'Marcos Roberto',
     },
   },
   {
     id: '15',
     data: {
       course: 'Desenvolvimento Backend',
-      fullName: 'Miriam Regina de Bastos Alves',
+      fullName: 'Vitoria Barbosa',
     },
   },
   {
     id: '16',
     data: {
       course: 'Desenvolvimento Backend',
-      fullName: 'José Weslley Silva Valério dos Santos',
+      fullName: 'William Rodrigues',
     },
   },
   {
     id: '17',
     data: {
-      course: 'Desenvolvimento Backend',
-      fullName: 'Gabriel dos Santos Ribeiro',
+      course: 'Design UI/UX',
+      fullName: 'Aline Mayumi',
     },
   },
   {
     id: '18',
     data: {
-      course: 'Desenvolvimento Backend',
-      fullName: 'Julian Kaaese Ferreira da Silva',
+      course: 'Design UI/UX',
+      fullName: 'Bianca Pereira',
     },
   },
   {
     id: '19',
     data: {
-      course: 'Desenvolvimento Backend',
-      fullName: 'Lucas Bezerra de Lima',
+      course: 'Design UI/UX',
+      fullName: 'Brena Karine',
     },
   },
   {
     id: '20',
     data: {
-      course: 'Desenvolvimento Backend',
-      fullName: 'Erickssom Melgaço de Oliveira',
+      course: 'Design UI/UX',
+      fullName: 'Bruna de Lisboa',
     },
+  },
+  {
     id: '21',
     data: {
-      course: 'Desenvolvimento Backend',
-      fullName: 'Afranio Martins Caires',
+      course: 'Design UI/UX',
+      fullName: 'Ester Marcionilo',
     },
   },
   {
     id: '22',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Mayara Gonçalves Santos',
+      fullName: 'Fernanda Carolina',
     },
   },
   {
     id: '23',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Renata Tenis Bastos',
+      fullName: 'Gabriela Rodrigues',
     },
   },
   {
     id: '24',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Sindy Mel Augusta Francisca',
+      fullName: 'Gustavo Felipe',
     },
   },
   {
     id: '25',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Renata Dos Santos Lessa',
+      fullName: 'Jennifer Silva',
     },
   },
   {
     id: '26',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Thais Maria Alves',
+      fullName: 'Karen Sofia',
     },
   },
   {
     id: '27',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Rafaela dos Santos Silva do Nascimento',
+      fullName: 'Marcella Waite',
     },
   },
   {
     id: '28',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Karina  Eleúterio de Matos',
+      fullName: 'Renato Camargo',
     },
   },
   {
     id: '29',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Nicholas Dill',
-    },
-  },
-  {
-    id: '30',
-    data: {
-      course: 'Design UI/UX',
-      fullName: 'PRISCILA KARINA SANTOS DE SOUZA',
-    },
-  },
-  {
-    id: '31',
-    data: {
-      course: 'Design UI/UX',
-      fullName: 'Julia Lima',
-    },
-  },
-  {
-    id: '32',
-    data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'Kelly Yasmin Ferreira e Silva',
-    },
-  },
-  {
-    id: '33',
-    data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'Lucas Alexandre Lima Santos Dias',
-    },
-  },
-  {
-    id: '34',
-    data: {
-      course: 'Desenvolvimento Backend',
-      fullName: 'Marco Antonio Ferreira Pinto',
-    },
-  },
-  {
-    id: '34',
-    data: {
-      course: 'Desenvolvimento Backend',
-      fullName: 'Paulo Yuri Fonseca Rosa',
-    },
-  },
-  {
-    id: '35',
-    data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'Pablo Mesquita Reis Terra',
-    },
-  },
-  {
-    id: '36',
-    data: {
-      course: 'Desenvolvimento Backend',
-      fullName: 'Erickssom Melgaço de Oliveira',
-    },
-  },
-  {
-    id: '37',
-    data: {
-      course: 'Desenvolvimento Web',
-      fullName: 'João Gabriel',
+      fullName: 'Silvia Trovatti',
     },
   },
 ];
