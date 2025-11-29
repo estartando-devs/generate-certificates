@@ -116,28 +116,28 @@ export const students: Student[] = [
     id: '17',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Aline Mayumi',
+      fullName: 'Aline Kikuchi',
     },
   },
   {
     id: '18',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Bianca Pereira',
+      fullName: 'Bianca Melo',
     },
   },
   {
     id: '19',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Brena Karine',
+      fullName: 'Brena Silva',
     },
   },
   {
     id: '20',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Bruna de Lisboa',
+      fullName: 'Bruna Lisboa',
     },
   },
   {
@@ -151,14 +151,14 @@ export const students: Student[] = [
     id: '22',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Fernanda Carolina',
+      fullName: 'Fernanda Rodrigues',
     },
   },
   {
     id: '23',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Gabriela Rodrigues',
+      fullName: 'Gabriela Manenti',
     },
   },
   {
@@ -172,7 +172,7 @@ export const students: Student[] = [
     id: '25',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Jennifer Silva',
+      fullName: 'Jennifer Ribeiro',
     },
   },
   {
@@ -193,7 +193,7 @@ export const students: Student[] = [
     id: '28',
     data: {
       course: 'Design UI/UX',
-      fullName: 'Renato Camargo',
+      fullName: 'Renato Godoy',
     },
   },
   {
