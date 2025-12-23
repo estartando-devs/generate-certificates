@@ -22,17 +22,25 @@ export const Home = ({ students }: HomeProps) => {
     sortAlphabetically(a.data.fullName, b.data.fullName)
   );
 
+  const quizOdsStudents = studentsOrdened.filter(
+    (student) => student.data.fullName === 'Ryan Doreto' || student.data.fullName === 'Cleiton Maciel'
+  );
+
+
   const frontendStudents = studentsOrdened.filter(
-    (student) => student.data.course === 'Desenvolvimento Web'
+    (student) => student.data.course === 'Desenvolvimento Web' && !quizOdsStudents.includes(student)
   );
 
   const backendStudents = studentsOrdened.filter(
-    (student) => student.data.course === 'Desenvolvimento Backend'
+    (student) => student.data.course === 'Desenvolvimento Backend' && !quizOdsStudents.includes(student)
   );
 
   const designStudents = studentsOrdened.filter(
     (student) => student.data.course === 'Design UI/UX'
   );
+
+
+
 
   return (
     <S.HomeWrapper className="container">
@@ -67,6 +75,17 @@ export const Home = ({ students }: HomeProps) => {
           <S.BoxTitle variant="h2">Desenvolvimento Backend</S.BoxTitle>
           <S.ListArea>
             {backendStudents.map((student) => (
+              <Link key={student.id} href={`/certificados/${student.id}`}>
+                <S.LinkName>{capitalize(student.data.fullName)}</S.LinkName>
+              </Link>
+            ))}
+          </S.ListArea>
+        </S.ClassBox>
+
+        <S.ClassBox>
+          <S.BoxTitle variant="h2">Segunda Chamada</S.BoxTitle>
+          <S.ListArea>
+            {quizOdsStudents.map((student) => (
               <Link key={student.id} href={`/certificados/${student.id}`}>
                 <S.LinkName>{capitalize(student.data.fullName)}</S.LinkName>
               </Link>

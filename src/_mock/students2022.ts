@@ -35,13 +35,13 @@ export const students: Student[] = [
       fullName: 'Tiago Noronha',
     },
   },
-  // {
-  //   id: '6',
-  //   data: {
-  //     course: 'Desenvolvimento Backend',
-  //     fullName: 'Cleiton Maciel',
-  //   },
-  // },
+  {
+    id: '6',
+    data: {
+      course: 'Desenvolvimento Backend',
+      fullName: 'Cleiton Maciel',
+    },
+  },
   {
     id: '7',
     data: {
@@ -203,4 +203,11 @@ export const students: Student[] = [
       fullName: 'Silvia Trovatti',
     },
   },
+  {
+    id: '30',
+    data: {
+      course: 'Desenvolvimento Web',
+      fullName: 'Ryan Doreto',
+    },
+  }
 ];
